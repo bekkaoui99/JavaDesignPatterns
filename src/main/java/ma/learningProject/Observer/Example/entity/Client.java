@@ -1,8 +1,10 @@
 package ma.learningProject.Observer.Example.entity;
 
+import ma.learningProject.Observer.Example.service.Observer;
+
 import java.io.PrintWriter;
 
-public class Client {
+public class Client implements Observer {
 
     private String userName;
     private String userAddress;
@@ -49,6 +51,7 @@ public class Client {
         this.role = role;
     }
 
+    @Override
     public void update(Product product){
         printWriter.println("new notification");
         printWriter.println(product);
